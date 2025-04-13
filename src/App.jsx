@@ -11,7 +11,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { Context } from "./main";
-import Login from "./pages/Login";
+import Login from "./Pages/Login";
 import Footer from "./components/Footer";
 
 const App = () => {
