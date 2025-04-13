@@ -20,21 +20,24 @@ const App = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get(
+        const { data } = await axios.get(
           "https://hms-backend-deployment-gx72.vercel.app/api/v1/user/patient/me",
           {
             withCredentials: true,
           }
         );
         setIsAuthenticated(true);
-        setUser(response.data.user);
+        setUser(data.user);
       } catch (error) {
+        console.error("Error fetching user:", error.response?.data || error.message);
         setIsAuthenticated(false);
         setUser({});
       }
     };
+  
     fetchUser();
-  }, [isAuthenticated]);
+  }, []);
+  
   return (
     <>
     <Router>
