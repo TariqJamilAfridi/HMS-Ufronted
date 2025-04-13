@@ -11,7 +11,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     await axios
-      .get("https://hms-backend-deployment-gx72.vercel.app/api/v1/user/patient/logout", {
+      .get("http://localhost:5000/api/v1/user/patient/logout", {
         withCredentials: true,
       })
       .then((res) => {

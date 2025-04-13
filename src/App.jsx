@@ -21,7 +21,7 @@ const App = () => {
     const fetchUser = async () => {
       try {
         const { data } = await axios.get(
-          "https://hms-backend-deployment-gx72.vercel.app/api/v1/user/patient/me",
+          "http://localhost:5000/api/v1/user/patient/me",
           {
             withCredentials: true,
           }
