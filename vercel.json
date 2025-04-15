@@ -1,0 +1,21 @@
+{
+    "version": 2,
+    "rewrites": [
+      {
+        "source": "/appointment",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/aboutus",
+        "destination": "/index.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "/(.*)",
+        "headers": [
+          { "key": "Cache-Control", "value": "no-store" }
+        ]
+      }
+    ]
+  }
