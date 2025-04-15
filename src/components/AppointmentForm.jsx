@@ -37,7 +37,7 @@ const naviagteTo = useNavigate()
   useEffect(() => {
     const fetchDoctors = async () => {
       const { data } = await axios.get(
-        "https://hms-backend-tj-48lx.vercel.app//api/v1/user/doctors",
+        "https://hms-backend-tj-48lx.vercel.app/api/v1/user/doctors",
         { withCredentials: true }
       );
       setDoctors(data.doctors);
@@ -50,7 +50,7 @@ const naviagteTo = useNavigate()
     try {
       const hasVisitedBool = Boolean(hasVisited);
       const { data } = await axios.post(
-        "https://hms-backend-tj-48lx.vercel.app//api/v1/appointment/post",
+        "https://hms-backend-tj-48lx.vercel.app/api/v1/appointment/post",
         {
           firstName,
           lastName,
