@@ -24,18 +24,25 @@ const App = () => {
           "https://hms-backend-tj-48lx.vercel.app/api/v1/user/patient/me",
           {
             withCredentials: true,
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${localStorage.getItem('token')}`
+            }
           }
         );
         setIsAuthenticated(true);
         setUser(data.user);
       } catch (error) {
-        console.error("Error fetching user:", error.response?.data || error.message);
+        console.error("Error:", error.response?.data?.message || error.message);
         setIsAuthenticated(false);
         setUser({});
+        localStorage.removeItem('token');
       }
     };
   
-    fetchUser();
+    if (localStorage.getItem('token')) {
+      fetchUser();
+    }
   }, []);
   
   return (
